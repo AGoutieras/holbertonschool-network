@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Print all non-IPv6 IP addresses assigned to the system
 
-ip addr | grep inet | grep -v inet6 | awk '{print $2}' | awk -F'/' '{print $1}'
+ifconfig | grep "inet " | awk '{print $2}'
